@@ -1,0 +1,646 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 95%;
+  display: grid;
+  place-items: center;
+  row-gap: 20px;
+  margin-bottom: 65px;
+  .heading {
+    width: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    margin-bottom: 75px;
+    .mobile_line {
+      display: none;
+    }
+    h3 {
+      text-align: center;
+      width: 75%;
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      color: $color-dark-blue;
+      b {
+        color: #8490b0;
+        font-weight: 700;
+      }
+    }
+    .arrow_block {
+      position: absolute;
+      top: 100%;
+      right: 18%;
+      padding: 7px 12px;
+      border: 1px solid rgba(4, 91, 138, 0.15);
+      border-top-left-radius: 16px;
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 16px;
+      background-color: #447efc;
+      box-shadow: 0px 4px 8px 0px var(--BubbleChtBlueShdw);
+      display: grid;
+      place-items: center;
+      span {
+        font-size: 13px;
+        color: $color-white;
+      }
+      .mouse_pointer {
+        position: absolute;
+        top: -62%;
+        right: -18%;
+        transform: rotateZ(85deg);
+        fill: #447efc;
+        color: #fff;
+        filter: drop-shadow(0px 1px 2px #2c2c2c80);
+      }
+    }
+  }
+  .cards_row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+.card_root {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  border: 1px solid #045b8a26;
+  background-color: $color-white;
+  border-radius: 24px;
+  padding: 7px;
+  height: 470px;
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #045b8a26;
+    background-color: #fbfcff;
+    border-radius: 18px;
+    padding: 30px;
+    overflow: hidden;
+    .top_block {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .icon {
+        display: grid;
+        place-items: center;
+        background-color: $color-light-blue;
+        box-shadow: 0px 1.38px 4.13px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px -1.38px 0px 0px rgba(38, 102, 243, 1) inset;
+        box-shadow: 0px 1.38px 1.03px 0px rgba(255, 255, 255, 0.12) inset;
+        box-shadow: 0px 0px 0px 1.38px rgba(36, 94, 220, 1);
+        border-radius: 16px;
+        width: 64px;
+        height: 64px;
+        img {
+          margin-top: 3px;
+          width: 36px;
+          height: 36px;
+        }
+      }
+      span {
+        font-size: 12px;
+        color: #b5bccf;
+      }
+    }
+    .bottom_block {
+      width: 100%;
+      display: grid;
+      place-items: flex-start;
+      row-gap: 10px;
+      h3 {
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+        font-size: 28px;
+        font-weight: 600;
+        color: $color-dark-blue;
+        width: 70%;
+        text-align: start;
+        b {
+          color: #a0abc9;
+          font-weight: 600;
+        }
+      }
+      p {
+        color: $color-dark-blue;
+        font-size: 16px;
+        font-weight: 500;
+        width: 90%;
+        letter-spacing: -0.5px;
+        text-align: start;
+      }
+    }
+  }
+  .active_card {
+    background-image: url('../../../public/Container.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    position: relative;
+    .left {
+      position: absolute;
+      left: -2%;
+    }
+    .right {
+      position: absolute;
+      right: -2%;
+    }
+    .vertical {
+      position: absolute;
+      top: 0;
+      height: 15%;
+    }
+    .vertical_bottom {
+      position: absolute;
+      bottom: 0;
+      height: 10%;
+      transform: rotate(180deg);
+    }
+    span {
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(235, 241, 255, 1);
+      margin-bottom: 25px;
+      font-weight: 500;
+      opacity: 0.3;
+    }
+    h3 {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      gap: 5px;
+      font-size: 36px;
+      letter-spacing: -0.5px;
+      font-weight: 700;
+      color: $color-white;
+      width: 85%;
+      text-align: center;
+      text-wrap: balance;
+    }
+    p {
+      color: $color-white;
+      font-size: 15px;
+      font-weight: 500;
+      width: 90%;
+      text-align: center;
+      text-wrap: balance;
+      b {
+        font-weight: 700;
+      }
+    }
+    button {
+      padding: 5px;
+      margin-top: 10px;
+      padding-right: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      &:hover {
+        opacity: 0.8;
+      }
+      .avatar {
+        width: 50px;
+        height: 50px;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 7px;
+        .active_dot {
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          background-color: rgba(42, 224, 93, 1);
+          border-radius: 50%;
+          border: 3.5px solid $color-white;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.stage_card {
+  height: 100%;
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+  .wrapper {
+    row-gap: 20px;
+    border: none;
+    border-radius: 24px;
+    padding: 10px;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid #045b8a26;
+    }
+    .image_block {
+      width: 100%;
+      height: 317px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 14px;
+      border: 1px solid #045b8a26;
+    }
+    .text {
+      display: grid;
+      place-items: flex-start;
+      width: 100%;
+      row-gap: 15px;
+      padding: 15px;
+      padding-top: 5px;
+      .top_block {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        .icon {
+          color: $color-white;
+          font-size: 20px;
+          font-weight: 600;
+          width: 56px;
+          height: 56px;
+          border-radius: 12px;
+          box-shadow: 0px 1.38px 4.13px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px -1.38px 0px 0px rgba(38, 102, 243, 1) inset;
+          box-shadow: 0px 1.38px 1.03px 0px rgba(255, 255, 255, 0.12) inset;
+          box-shadow: 0px 0px 0px 1.38px rgba(36, 94, 220, 1);
+        }
+        span {
+          align-items: center;
+          text-align: center;
+          gap: 5px;
+          font-size: 26px;
+          font-weight: 600;
+          color: $color-dark-blue;
+          width: 85%;
+          text-align: start;
+        }
+      }
+      p {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        color: $color-dark-blue;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .root {
+    .heading {
+      width: 55%;
+      h3 {
+        font-size: 45px;
+      }
+    }
+  }
+  .card_root {
+    height: 400px;
+    .wrapper {
+      .top_block {
+        .icon {
+          width: 56px;
+          height: 56px;
+        }
+      }
+      .bottom_block {
+        h3 {
+          font-size: 25px;
+          width: 85%;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .active_card {
+      h3 {
+        font-size: 33px;
+      }
+      p {
+        font-size: 14px;
+        width: 100%;
+      }
+      button {
+        font-size: 15px;
+      }
+      .left {
+        left: -7%;
+      }
+      .right {
+        right: -7%;
+      }
+      .vertical {
+        height: 8%;
+      }
+      .vertical_bottom {
+        height: 6%;
+      }
+    }
+  }
+  .stage_card {
+    height: 100%;
+    padding: 0;
+    .wrapper {
+      .text {
+        .top_block {
+          .icon {
+            font-size: 18px;
+            width: 45px;
+            height: 45px;
+          }
+          span {
+            font-size: 24px;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .card_root {
+    .active_card {
+      row-gap: 15px;
+      h3 {
+        width: 100%;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .root {
+    .heading {
+      width: 85%;
+    }
+  }
+  .stage_card {
+    .wrapper {
+      .image_block {
+        height: 300px;
+      }
+      .text {
+        .icon {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .stage_card {
+    width: 100%;
+  }
+  .card_root {
+    .active_card {
+      h3 {
+        width: 95%;
+      }
+    }
+    .wrapper {
+      row-gap: 20px;
+      .top_block {
+        span {
+          font-size: 20px;
+        }
+        .icon {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      .bottom_block {
+        .li_item {
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .root {
+    .cards_row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .root {
+    .heading {
+      width: 95%;
+      h3 {
+        width: 100%;
+      }
+    }
+    .cards_row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .stage_card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .card_root {
+    .active_card {
+      background-repeat: repeat !important;
+      .left {
+        left: 0;
+      }
+      .right {
+        right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .card_root {
+    .active_card {
+      .left {
+        left: -4%;
+      }
+      .right {
+        right: -4%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    padding-top: 0px;
+    .heading {
+      width: 95%;
+      margin-bottom: 40px;
+      row-gap: 10px;
+      .mobile_line {
+        display: block;
+      }
+      h3 {
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+      }
+      .arrow_block {
+        top: 140%;
+        right: 18%;
+        box-shadow: none;
+        span {
+          font-size: 10px;
+          margin: 0;
+          padding: 0;
+        }
+        .mouse_pointer {
+          width: 25%;
+          height: auto;
+          top: -62%;
+          right: -20%;
+        }
+      }
+    }
+  }
+  .card_root {
+    height: 350px;
+    padding: 4px;
+    .wrapper {
+      .top_block {
+        span {
+          font-size: 12px;
+        }
+        .icon {
+          width: 44px;
+          height: 44px;
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+      .bottom_block {
+        h3 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .active_card {
+      background-repeat: no-repeat !important;
+      background-size: cover;
+      margin: 0;
+
+      span {
+        font-size: 10px;
+        margin-bottom: 0px;
+      }
+      h3 {
+        font-size: 25px;
+        width: 100%;
+      }
+      p {
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .stage_card {
+    height: 100%;
+    padding: 0;
+    .wrapper {
+      padding: 5px;
+      img {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      .text {
+        .top_block {
+          .icon {
+            font-size: 18px;
+            width: 45px;
+            height: 45px;
+          }
+          span {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .root {
+    .heading {
+      .arrow_block {
+        right: 8%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 557px) {
+  .root {
+    .heading {
+      margin-bottom: 25px;
+      .arrow_block {
+        right: 28%;
+        top: 100%;
+      }
+    }
+  }
+  .card_root {
+    .active_card {
+      .left {
+        left: -10%;
+      }
+      .right {
+        right: -10%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card_root {
+    height: auto;
+    .active_card {
+      background-size: auto;
+    }
+  }
+
+  .root {
+    .heading {
+      .arrow_block {
+        right: 8%;
+      }
+    }
+  }
+}

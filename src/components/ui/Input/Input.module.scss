@@ -1,0 +1,86 @@
+@use '../../../styles/variables' as *;
+
+.root {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  row-gap: 5px;
+  background: rgba(251, 252, 255, 1);
+  border: 1px solid rgba(4, 91, 138, 0.15);
+  padding: 12px;
+  border-radius: 10px;
+  p {
+    color: $color-dark-blue;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: start;
+  }
+  .arrow {
+    position: absolute;
+    right: 15px;
+    top: 53%;
+    transform: translateY(-50%);
+  }
+  div {
+    width: 100%;
+    position: relative;
+    input,
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      padding: 5px 0px;
+      font-family: inherit;
+      color: rgba(181, 188, 207, 1);
+      font-weight: 500;
+      resize: none;
+      outline: none;
+      &::placeholder {
+        font-size: 14px;
+        font-family: inherit;
+        color: rgba(181, 188, 207, 1);
+        font-weight: 500;
+      }
+    }
+    textarea {
+      height: 130px;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    row-gap: 0px;
+    p {
+      font-size: 14px !important;
+    }
+    div {
+      input,
+      textarea {
+        font-size: 16px;
+        &::placeholder {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

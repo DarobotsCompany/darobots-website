@@ -1,0 +1,231 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 95%;
+  margin: 65px 0px;
+  display: grid;
+  place-items: center;
+  row-gap: 35px;
+  .heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    h3 {
+      text-align: start;
+      width: 55%;
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      color: $color-dark-blue;
+      b {
+        color: #8490b0;
+        font-weight: 700;
+      }
+    }
+    .switches {
+      background-color: $color-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 50px;
+      border: 1px solid #045b8a26;
+    }
+  }
+  .embla {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .embla__container {
+    display: flex;
+    gap: 25px;
+  }
+  .mobile_switches {
+    background-color: $color-white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #045b8a26;
+  }
+}
+
+.card_root {
+  width: 370px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  row-gap: 15px;
+  .image_block {
+    background: linear-gradient(0deg, #d8ecfb 0%, #f3f2f8 50%, #fbfbfc 100%);
+    border: 1px solid rgba(4, 91, 138, 0.1);
+    padding: 6px;
+    border-radius: 24px;
+    height: 460px;
+    width: 100%;
+    .image_block_wrapper {
+      border-radius: 24px;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  .text_block {
+    width: 100%;
+    display: grid;
+    place-items: flex-start;
+    row-gap: 10px;
+    padding: 0px 15px;
+    cursor: auto;
+    .top_block {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      p {
+        font-weight: 600;
+        font-size: 22px;
+        color: $color-dark-blue;
+        width: fit-content;
+      }
+    }
+    p {
+      font-size: 14px;
+      color: $color-dark-blue;
+      font-weight: 500;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .root {
+    .heading {
+      h3 {
+        font-size: 45px;
+        width: 55%;
+      }
+    }
+  }
+  .card_root {
+    width: 330px;
+    .image_block {
+      background: linear-gradient(0deg, #d8ecfb 0%, #f3f2f8 50%, #fbfbfc 100%);
+      border: 1px solid rgba(4, 91, 138, 0.1);
+      padding: 6px;
+      border-radius: 24px;
+      height: 410px;
+      width: 100%;
+    }
+    .text_block {
+      .top_block {
+        p {
+          font-size: 20px;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .root {
+    .heading {
+      h3 {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .embla__slide {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+  .card_root {
+    width: 100%;
+    .image_block {
+      height: 450px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    margin: 15px;
+    row-gap: 15px;
+    .heading {
+      .switches {
+        display: none;
+      }
+      h3 {
+        text-align: center;
+        font-size: 24px;
+        width: 100%;
+        text-wrap: balance;
+      }
+    }
+    .mobile_switches {
+      display: flex;
+      padding: 5px;
+      div {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+    .embla__container {
+      gap: 5px;
+    }
+  }
+  .embla__slide {
+    flex: 0 0 calc((100% - 20px) / 1.2);
+  }
+
+  .card_root {
+    width: 100%;
+    .image_block {
+      height: 550px;
+      padding: 3px;
+    }
+    .text_block {
+      .top_block {
+        p {
+          font-size: 20px;
+        }
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card_root {
+    .image_block {
+      height: 370px;
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .card_root {
+    .image_block {
+      height: 300px;
+    }
+  }
+}

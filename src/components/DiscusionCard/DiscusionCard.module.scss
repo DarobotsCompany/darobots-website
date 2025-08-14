@@ -1,0 +1,326 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 95%;
+  background-image: url('../../../public/CTA (1).png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-blend-mode: multiply;
+  border: 1px solid $color-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  border-radius: 32px;
+  padding: 35px;
+  margin: 65px 0px;
+  overflow: hidden;
+  box-shadow: 0px 1.38px 4.13px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -1.38px 0px 0px rgba(38, 102, 243, 1) inset;
+  box-shadow: 0px 1.38px 1.03px 0px rgba(255, 255, 255, 0.12) inset;
+  box-shadow: 0px 0px 0px 1.38px rgba(36, 94, 220, 1);
+  .text_block {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    row-gap: 130px;
+    .top_wrapper {
+      display: grid;
+      place-items: flex-start;
+      width: 100%;
+      row-gap: 50px;
+      .heading {
+        display: grid;
+        place-items: flex-start;
+        width: 100%;
+        row-gap: 15px;
+        h3 {
+          align-items: center;
+          text-align: start;
+          width: 100%;
+          gap: 5px;
+          font-size: 48px;
+          font-weight: 600;
+          color: $color-white;
+          .image_wrapper {
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 24px !important;
+            img {
+              height: auto;
+              width: 100%;
+            }
+          }
+        }
+        p {
+          font-size: 20px;
+          color: $color-white;
+          width: 85%;
+          font-weight: 500;
+          text-align: start;
+        }
+      }
+    }
+    button {
+      width: fit-content;
+      padding: 5px;
+      font-weight: 600;
+      padding-right: 15px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .slider_block {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-15%) translateY(-75%) rotateZ(-30deg);
+    justify-content: flex-end;
+  }
+  .mobile_slider {
+    width: 100%;
+    display: none;
+    gap: 10px;
+    justify-content: center;
+    transform: rotate(-25deg);
+    position: absolute;
+    bottom: -85%;
+    left: 10%;
+    .mobile_image_wrapper {
+      display: grid;
+      place-items: center;
+      gap: 10px;
+      &:first-child {
+        place-items: flex-start;
+      }
+      &:nth-child(2) {
+        place-items: center;
+        margin-bottom: 220px;
+      }
+      img {
+        height: auto;
+        width: 180px;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sliderWrapper {
+  display: flex;
+}
+
+.scrollContainer {
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+
+.scrollUp .scrollTrack {
+  animation: scrollUp 20s linear infinite;
+}
+
+.scrollDown .scrollTrack {
+  animation: scrollDown 20s linear infinite;
+}
+
+.imageWrapper {
+  margin-bottom: 5px;
+  width: 230px;
+  img {
+    height: auto;
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .root {
+    .text_block {
+      .top_wrapper {
+        .heading {
+          h3 {
+            font-size: 37px;
+            width: 100%;
+          }
+          p {
+            font-size: 17px;
+            width: 75%;
+          }
+        }
+      }
+    }
+    button {
+      font-size: 16px;
+    }
+    .slider_block {
+      transform: translateX(-5%) translateY(-50%) rotateZ(-30deg);
+    }
+  }
+  .imageWrapper {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 1430px) {
+  .root {
+    .text_block {
+      width: 50%;
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .imageWrapper {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .root {
+    .text_block {
+      width: 60%;
+    }
+  }
+  .imageWrapper {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .root {
+    .slider_block {
+      transform: translateX(-5%) translateY(-100%) rotateZ(-30deg);
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .root {
+    .slider_block {
+      display: none;
+    }
+    .text_block {
+      width: 100%;
+      row-gap: 60px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .root {
+    margin: 30px 0px;
+    padding: 20px;
+    position: relative;
+    flex-direction: column;
+    padding-bottom: 320px;
+    margin-bottom: 60px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150%;
+      height: 150%;
+      background-image: url('../../../public/CTA (1).png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      transform: translate(-50%, -50%) rotate(15deg);
+      z-index: 0;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+    .slider_block {
+      display: none;
+    }
+    .mobile_slider {
+      display: flex;
+    }
+    .text_block {
+      row-gap: 25px;
+      button {
+        font-size: 15px;
+      }
+
+      .top_wrapper {
+        display: grid;
+        place-items: flex-start;
+        width: 100%;
+        row-gap: 25px;
+        .heading {
+          h3 {
+            font-size: 23px;
+            .image_wrapper {
+              display: inline-block;
+              vertical-align: middle;
+              border-radius: 24px !important;
+              width: 30px;
+              img {
+                height: auto;
+                width: 100%;
+              }
+            }
+          }
+          p {
+            font-size: 14px;
+            width: 95%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .root {
+    background-size: cover;
+    background-repeat: no-repeat;
+    .mobile_slider {
+      bottom: -80%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .root {
+    .mobile_slider {
+      bottom: -43%;
+
+      .mobile_image_wrapper {
+        &:nth-child(2) {
+          place-items: center;
+          margin-bottom: 100px;
+        }
+        img {
+          width: 130px;
+        }
+      }
+    }
+  }
+}

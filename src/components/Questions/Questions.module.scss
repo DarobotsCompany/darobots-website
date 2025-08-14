@@ -1,0 +1,156 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 85px;
+  margin-top: 85px;
+  .heading {
+    display: grid;
+    place-items: flex-start;
+    row-gap: 20px;
+    h3 {
+      text-align: start;
+      width: 85%;
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      color: $color-dark-blue;
+      b {
+        color: #8490b0;
+        font-weight: 700;
+      }
+    }
+    button {
+      padding: 6px;
+      padding-right: 15px;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  .questions_block {
+    width: 50%;
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      .accordion_item {
+        border-radius: 18px;
+        background: rgba(251, 252, 255, 1);
+        border: 1px solid rgba(4, 91, 138, 0.15);
+        width: 100%;
+        padding: 13px;
+      }
+      .accordion_heading {
+        border-radius: 18px;
+        width: 100%;
+        font-size: 17px;
+        color: $color-dark-blue;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.5;
+        }
+        .expanded_button {
+          background-color: $color-white;
+          svg {
+            color: $color-dark-blue;
+          }
+        }
+      }
+      .accordion_body {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+        color: $color-dark-blue;
+        border: 1px solid rgba(4, 91, 138, 0.15);
+        border-radius: 12px;
+        background: rgba(243, 246, 252, 1);
+        margin-top: 15px;
+
+        div {
+          display: grid;
+          place-items: flex-start;
+          margin: 10px 0px;
+          row-gap: 5px;
+        }
+        p {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .root {
+    .heading {
+      h3 {
+        font-size: 45px;
+      }
+      button {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .root {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    .questions_block {
+      width: 100%;
+    }
+    .heading {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .root {
+    margin: 30px 0px;
+    margin-top: 45px;
+    .heading {
+      width: 100%;
+      h3 {
+        font-size: 24px;
+        text-align: center;
+        width: 85%;
+        text-wrap: balance;
+        justify-self: center;
+      }
+      button {
+        display: none;
+      }
+    }
+    .questions_block {
+      .accordion {
+        row-gap: 10px;
+        .accordion_item {
+          padding: 10px;
+        }
+        .accordion_heading {
+          font-size: 14px;
+          &:hover {
+            opacity: 1 !important;
+          }
+          &:active {
+            opacity: 0.5 !important;
+          }
+          .switch_button {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
