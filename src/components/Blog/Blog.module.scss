@@ -1,0 +1,236 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 95%;
+  display: grid;
+  place-items: center;
+  row-gap: 55px;
+  margin: 65px 0px;
+  .heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      color: $color-dark-blue;
+      line-height: 1em;
+    }
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+  }
+  .cards_row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+}
+
+.card_root {
+  width: 100%;
+  display: grid;
+  place-items: flex-start;
+  padding: 6px;
+  border-radius: 24px;
+  border: 1px solid #045b8a26;
+  height: 100%;
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 25px;
+    position: relative;
+    border: 1px solid #045b8a26;
+    .image_block {
+      width: 100%;
+      height: 240px;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: -1px;
+      span {
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 6px 10px;
+        border-radius: 7px;
+        background-color: $color-white;
+        color: $color-dark-blue;
+      }
+    }
+    .text_block {
+      width: 90%;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: space-between;
+      justify-content: space-between;
+      row-gap: 15px;
+      padding-bottom: 75px;
+      div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        row-gap: 15px;
+        span {
+          font-size: 13px;
+          color: #b5bccf;
+        }
+        h3 {
+          font-size: 28px;
+          color: $color-dark-blue;
+          width: 100%;
+          text-align: start;
+        }
+      }
+
+      .read_more {
+        font-size: 16px;
+        color: $color-blue;
+        text-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 3%;
+        transition: all 0.3s;
+        &:hover {
+          color: $color-dark-blue;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .root {
+    .heading {
+      h3 {
+        font-size: 45px;
+      }
+    }
+  }
+  .card_root {
+    .wrapper {
+      .image_block {
+        height: 200px;
+        span {
+          font-size: 11px;
+        }
+      }
+      .text_block {
+        div {
+          span {
+            font-size: 12px;
+          }
+          h3 {
+            font-size: 23px;
+          }
+        }
+        .read_more {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .root {
+    .cards_row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .root {
+    .cards_row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .card_root {
+    .wrapper {
+      .image_block {
+        height: 250px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .root {
+    row-gap: 30px;
+    margin-bottom: 40px;
+    .heading {
+      h3 {
+        font-size: 24px;
+      }
+      a {
+        font-size: 14px;
+      }
+    }
+    .cards_row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .card_root {
+    .wrapper {
+      .image_block {
+        height: 300px;
+        span {
+          font-size: 10px;
+          left: 2.5%;
+        }
+      }
+      .text_block {
+        width: 95%;
+        padding-bottom: 50px;
+        div {
+          row-gap: 10px;
+          span {
+            font-size: 11px;
+          }
+          h3 {
+            font-size: 20px;
+          }
+        }
+        .read_more {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .root {
+    .heading {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+  .card_root {
+    .wrapper {
+      .image_block {
+        height: 200px;
+      }
+    }
+  }
+}

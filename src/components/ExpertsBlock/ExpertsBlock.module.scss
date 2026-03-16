@@ -505,6 +505,8 @@
       h3 {
         width: 100%;
         font-size: 24px;
+        letter-spacing: -0.04em;
+        line-height: 1.1em;
         text-align: center;
       }
       .arrow_block {
@@ -545,6 +547,8 @@
       .bottom_block {
         h3 {
           font-size: 20px;
+          letter-spacing: -0.04em;
+          line-height: 1.1em;
         }
         p {
           font-size: 14px;
@@ -563,6 +567,8 @@
       h3 {
         font-size: 25px;
         width: 100%;
+        letter-spacing: -0.04em;
+        line-height: 1.1em;
       }
       p {
         font-size: 14px;
@@ -612,7 +618,7 @@
       margin-bottom: 25px;
       .arrow_block {
         right: 28%;
-        top: 100%;
+        top: 105%;
       }
     }
   }

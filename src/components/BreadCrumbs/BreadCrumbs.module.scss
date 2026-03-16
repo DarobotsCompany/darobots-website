@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+
+.root {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-light;
+  }
+  a {
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: $color-text-light;
+    font-weight: 500;
+    &:hover {
+      color: $color-dark-blue;
+    }
+  }
+  .active {
+    color: $color-dark-blue;
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    a {
+      font-size: 14px;
+    }
+  }
+}

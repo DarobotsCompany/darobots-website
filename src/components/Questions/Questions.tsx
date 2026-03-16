@@ -22,7 +22,7 @@ import { useAppDispatch } from '@/hooks/redux-hooks';
 
 import { QUESTIONS } from '@/constants/questions';
 
-import { montFont } from '@/fonts';
+import { interFont } from '@/fonts';
 
 export default function Questions() {
   const dispatch = useAppDispatch();
@@ -45,7 +45,7 @@ export default function Questions() {
         <Accordion
           allowMultipleExpanded
           allowZeroExpanded
-          className={clsx([styles.accordion, montFont.className])}
+          className={clsx([styles.accordion, interFont.className])}
         >
           {QUESTIONS.map((question, index) => {
             return (

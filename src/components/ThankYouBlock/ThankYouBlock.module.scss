@@ -1,0 +1,64 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 98%;
+  position: fixed;
+  top: 1.5%;
+  bottom: 1.5%;
+  min-height: calc(100dvh - 3%);
+  display: grid;
+  place-items: center;
+  align-items: space-between;
+  row-gap: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(4, 91, 138, 0.15);
+  background: linear-gradient(0deg, #d8ecfb 0%, #f3f2f8 50%, #fbfbfc 100%);
+  div {
+    display: grid;
+    place-items: center;
+    row-gap: 15px;
+    h1 {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      gap: 5px;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      line-height: 1em;
+      color: $color-dark-blue;
+    }
+    p {
+      font-size: 16px;
+      color: $color-dark-blue;
+      width: 100%;
+      font-weight: 500;
+      text-align: center;
+      text-wrap: balance;
+    }
+    button {
+      padding: 12px;
+      font-size: 16px;
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    width: 95%;
+    div {
+      width: 95%;
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 12px;
+      }
+      button {
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+  }
+}

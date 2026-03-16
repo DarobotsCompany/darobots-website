@@ -10,7 +10,7 @@ import Button from '@/components/ui/Button/Button';
 import Logo from '@/components/ui/Logo/Logo';
 
 import clsx from 'clsx';
-import { ChevronRight, Ellipsis } from 'lucide-react';
+import { ChevronRight, Dot } from 'lucide-react';
 
 import { setShowForm } from '@/redux/slices/formSlice';
 
@@ -45,7 +45,10 @@ export default function Header() {
           className={clsx([styles.hamburger_icon, showMenu && styles.hamburger_open])}
           onClick={() => setShowMenu(!showMenu)}
         >
-          <Ellipsis size={16} strokeWidth={3} />
+          <Dot size={25} strokeWidth={3} />
+          <Dot size={25} strokeWidth={3} />
+          <Dot size={25} strokeWidth={3} />
+          <Dot size={25} strokeWidth={3} />
         </div>
       </div>
       <MobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
