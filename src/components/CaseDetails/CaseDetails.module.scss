@@ -1,0 +1,265 @@
+@use '../../styles/variables' as *;
+
+.root {
+  width: 95%;
+  display: grid;
+  place-items: center;
+  row-gap: 55px;
+  margin: 55px 0px;
+  margin-bottom: 85px;
+
+  .info_block {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .image_block {
+      width: 100%;
+      position: relative;
+      margin-bottom: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+      }
+
+      span {
+        position: absolute;
+        top: 5%;
+        left: 3%;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 6px 10px;
+        border-radius: 7px;
+        background-color: $color-white;
+        color: $color-dark-blue;
+      }
+    }
+
+    h1 {
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      color: $color-dark-blue;
+      line-height: 1em;
+      margin-bottom: 5px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: $color-text-light;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .metrics_block {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      padding: 20px 0;
+      border-top: 1px solid #045b8a26;
+      border-bottom: 1px solid #045b8a26;
+      margin-bottom: 10px;
+
+      .metric_card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 12px;
+        border-right: 1px solid #045b8a26;
+
+        &:last-child {
+          border: none;
+        }
+
+        span {
+          font-size: 36px;
+          font-weight: 700;
+          color: $color-blue;
+        }
+
+        p {
+          font-size: 14px;
+          color: $color-dark-blue;
+          font-weight: 600;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: 600;
+      color: $color-dark-blue;
+      margin-top: 15px;
+    }
+
+    p,
+    li {
+      font-size: 16px;
+      color: $color-dark-blue;
+      font-weight: 500;
+      text-align: start;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 35px;
+      row-gap: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .technologies_block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .tech_tag {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 50px;
+        background-color: #e9f3ff;
+        color: $color-dark-blue;
+      }
+    }
+
+    .cta_block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      border: 1px solid #045b8a26;
+      border-radius: 24px;
+      padding: 30px;
+      margin-top: 30px;
+      background: linear-gradient(360deg, #f5f9ff 0%, #ffffff 100%);
+
+      h3 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      p {
+        color: $color-text-light;
+      }
+
+      button {
+        width: fit-content;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .root {
+    row-gap: 40px;
+    margin: 40px 0px;
+    margin-bottom: 75px;
+
+    .info_block {
+      h1 {
+        font-size: 45px;
+      }
+
+      h3 {
+        font-size: 25px;
+      }
+
+      .metrics_block {
+        .metric_card {
+          span {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .root {
+    .info_block {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .root {
+    .info_block {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    row-gap: 30px;
+    margin-top: 20px;
+
+    .info_block {
+      row-gap: 10px;
+
+      .image_block {
+        span {
+          font-size: 10px;
+        }
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+
+      p,
+      li {
+        font-size: 14px;
+      }
+
+      ul {
+        padding-left: 30px;
+      }
+
+      .metrics_block {
+        flex-wrap: wrap;
+
+        .metric_card {
+          min-width: calc(50% - 10px);
+          border-right: none;
+
+          span {
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .cta_block {
+        padding: 15px;
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

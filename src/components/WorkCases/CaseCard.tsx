@@ -34,7 +34,7 @@ export default function CaseCard({ card, casesCount }: CaseCardProps) {
         <Button isActive onClick={handleOpenForm}>
           Обговорити проєкт <ChevronRight size={16} strokeWidth={3} />
         </Button>
-        <Button>
+        <Button isLink linkHref={`/cases/${card.slug}`}>
           Детальніше <ChevronRight size={16} strokeWidth={3} />
         </Button>
       </div>
@@ -68,7 +68,7 @@ export default function CaseCard({ card, casesCount }: CaseCardProps) {
             <Button isActive onClick={handleOpenForm}>
               Обговорити проєкт <ChevronRight size={16} strokeWidth={3} />
             </Button>
-            <Button>
+            <Button isLink linkHref={`/cases/${card.slug}`}>
               Детальніше <ChevronRight size={16} strokeWidth={3} />
             </Button>
           </div>

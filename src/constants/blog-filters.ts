@@ -1,1 +1,1 @@
-export const BLOG_FILTERS = ['Всі', 'Корисне', 'Поради'];
+export const BLOG_FILTERS = ['Всі', 'Корисне', 'Поради', 'Кейси'];
