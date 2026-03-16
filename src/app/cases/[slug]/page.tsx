@@ -29,18 +29,31 @@ export async function generateMetadata({ params }: CasePageProps): Promise<Metad
     keywords: [
       currentCase.name,
       'chatbot case study',
+      'chatbot development Ukraine',
       'Telegram bot Ukraine',
       'chatbot development',
+      'Darobots',
       'DAROBOTS',
+      'bot automation',
+      'chatbot agency Ukraine',
+      'Telegram chatbot development',
       ...currentCase.technologies,
       currentCase.platform,
     ],
+    alternates: {
+      canonical: `/cases/${slug}`,
+      languages: {
+        uk: `/cases/${slug}`,
+        en: `/en/cases/${slug}`,
+      },
+    },
     openGraph: {
       title,
       description,
       type: 'article',
       images: [currentCase.imageSrc],
       siteName: 'DAROBOTS',
+      locale: 'uk_UA',
     },
     twitter: {
       card: 'summary_large_image',
