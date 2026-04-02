@@ -126,6 +126,19 @@
       color: rgba(181, 188, 207, 1);
     }
   }
+  .legal_links {
+    display: flex;
+    gap: 20px;
+    a {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(181, 188, 207, 1);
+      transition: color 0.3s;
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
 }
 
 .disabled {

@@ -59,7 +59,10 @@ export default function Footer() {
       </div>
       <div className={styles.copyright}>
         <p>© 2025 Darobots. Всі права захищені.</p>
-        <p>Політика конфіденційності</p>
+        <div className={styles.legal_links}>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
       </div>
     </footer>
   );
